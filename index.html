@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Банк заголовков · Елизавета Савкова</title>
+<meta name="description" content="Мои авторские заголовки и логика, по которой они работают. Бонус к практикуму «блог нового времени»">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Банк заголовков">
+<meta property="og:description" content="Мои авторские заголовки и логика, по которой они работают">
+<meta property="og:image" content="https://savkovaelizavetagr-hub.github.io/zagolovki/img/og.jpg">
+<meta property="og:url" content="https://savkovaelizavetagr-hub.github.io/zagolovki/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23645c52'/%3E%3Ctext x='16' y='22' font-size='20' text-anchor='middle' fill='%23f7f5f2' font-family='Georgia' font-style='italic'%3E%D0%B7%3C/text%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap">
+<style>
+/* layout: язык «Схемы роста блога» — белое поле, каллиграфичный курсив, светлый гротеск, текст лесенкой; типы заголовков как разделы памятки мастерской; одна светлая тема намеренно */
+:root{
+  --bg:#ffffff;
+  --fg:#1c1b19;
+  --muted:#5e5a55;
+  --line:#dcd7d0;
+  --taupe:#645c52;
+  --soft:#f6f4f1;
+  --on-taupe:#ffffff;
+  --script:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;
+  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:56px 72px}
+p{margin:0}
+h2,h3{margin:0;font-weight:300}
+.script{font-family:var(--script);font-style:italic;font-weight:300;letter-spacing:-.01em;line-height:.95;text-wrap:balance;margin:0}
+.br{font-style:italic}
+.br::before{content:"[ "}.br::after{content:" ]"}
+.lead-sm{font-size:clamp(1.1rem,3.4vw,1.4rem);font-weight:300;line-height:1.2}
+.indent{padding-left:30%}
+.indent-s{padding-left:14%}
+@media (max-width:560px){.indent{padding-left:12%}.indent-s{padding-left:6%}}
+.stack{display:flex;flex-direction:column;gap:22px}
+.muted{color:var(--muted)}
+a{color:var(--fg)}
+b{font-weight:500}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+:focus-visible{outline:1px solid var(--taupe);outline-offset:2px}
+
+/* обложка */
+.cover{position:relative;width:100%;min-height:min(60svh,540px);display:flex;overflow:hidden;background:#2b2724}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;max-width:100%;object-fit:cover;object-position:center 55%}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,16,.55) 0%,rgba(20,18,16,.35) 40%,rgba(20,18,16,.45) 70%,rgba(20,18,16,.7) 100%)}
+.cover-inner{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;justify-content:space-between;align-items:center;gap:32px;max-width:760px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:28px 40px;color:#fff;text-align:center}
+.cover-top{font-size:.82rem;color:rgba(255,255,255,.85);letter-spacing:.02em}
+.cover-title{display:flex;flex-direction:column;gap:16px;align-items:center}
+.cover-title h1{font-size:clamp(3.2rem,12vw,5.4rem);color:#fff}
+.cover-title p{font-size:clamp(.9rem,2.8vw,1.05rem);font-weight:300;color:#fff;max-width:30em}
+.cover-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px}
+.cover-nav a{color:#fff;text-decoration:none;font-family:var(--script);font-style:italic;font-size:1.2rem;border:1px solid rgba(255,255,255,.55);padding:6px 14px;transition:background .15s}
+.cover-nav a:hover{background:rgba(255,255,255,.14)}
+
+/* интро */
+.hero{display:flex;flex-direction:column;gap:22px}
+.quote{font-family:var(--script);font-style:italic;font-weight:400;font-size:clamp(1.6rem,4.6vw,2.1rem);line-height:1.15}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;counter-reset:s}
+.steps li{border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--script);font-style:italic;font-size:2rem;line-height:1;color:var(--taupe)}
+.steps li span{font-size:.92rem;line-height:1.4}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* разделы */
+section{padding-block:72px 8px;position:relative}
+.head{display:flex;flex-direction:column;gap:4px;position:relative}
+.head h2{font-size:clamp(3rem,10vw,4.6rem)}
+.stars{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.stars li{padding-left:24px;position:relative}
+.stars li::before{content:"✻";position:absolute;left:0;top:0;color:var(--muted);font-size:.9em}
+
+/* оглавление типов */
+.toc{display:flex;flex-wrap:wrap;gap:8px}
+.toc a{border:1px solid var(--line);padding:6px 14px;text-decoration:none;font-family:var(--script);font-style:italic;font-size:1.2rem;line-height:1.1;transition:border-color .15s}
+.toc a:hover{border-color:var(--taupe)}
+.toc a span{font-family:var(--sans);font-style:normal;font-size:.75rem;color:var(--taupe);margin-right:6px}
+
+/* типы заголовков */
+.types{display:flex;flex-direction:column}
+.f{display:flex;flex-direction:column;gap:16px;padding-block:48px 8px;border-top:1px solid var(--line)}
+.f:first-child{border-top:none;padding-top:28px}
+.f-head{display:flex;align-items:baseline;gap:14px}
+.f-n{font-family:var(--sans);font-style:normal;font-size:.8rem;color:var(--taupe);border:1px solid var(--taupe);border-radius:50%;width:30px;height:30px;flex:none;display:grid;place-items:center;transform:translateY(-4px)}
+.f-head h3{font-size:clamp(2.3rem,7.5vw,3.1rem)}
+.f-why{max-width:38em}
+.lbl{font-size:.8rem;color:var(--muted);letter-spacing:.02em}
+.fbox{background:var(--soft);padding:16px 20px;display:flex;flex-direction:column;gap:8px}
+.fbox ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.fbox li{font-size:1rem;line-height:1.4;padding-left:20px;position:relative}
+.fbox li::before{content:"✻";position:absolute;left:0;top:0;color:var(--taupe);font-size:.85em}
+.mine{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.hl{font-family:var(--script);font-style:italic;font-weight:400;font-size:clamp(1.3rem,3.8vw,1.55rem);line-height:1.2;padding-block:12px;border-bottom:1px solid var(--line)}
+.hl:first-child{border-top:1px solid var(--line)}
+.tag{font-family:var(--sans);font-style:normal;font-size:.72rem;font-weight:300;color:var(--muted);border:1px solid var(--line);padding:1px 7px;margin-left:8px;vertical-align:.2em;white-space:nowrap}
+.razbor{border-left:1px solid var(--taupe);padding-left:18px;display:flex;flex-direction:column;gap:6px;max-width:40em}
+.razbor .q{font-family:var(--script);font-style:italic;font-weight:500;font-size:1.25rem;line-height:1.2}
+.my label{font-size:.95rem;font-weight:400;display:block;margin-bottom:6px}
+.my label span{color:var(--muted);font-weight:300}
+textarea{width:100%;min-height:76px;resize:vertical;border:1px solid var(--line);border-radius:0;background:var(--bg);color:var(--fg);font:inherit;font-size:1rem;padding:10px 12px;line-height:1.5}
+
+/* копилка */
+.task{background:var(--soft);padding:24px;display:flex;flex-direction:column;gap:16px}
+.task .t-title{font-family:var(--script);font-style:italic;font-weight:400;font-size:1.9rem;line-height:1}
+.copy-btn{width:fit-content;max-width:100%;background:var(--taupe);color:var(--on-taupe);border:none;border-radius:0;font-family:var(--script);font-style:italic;font-size:1.3rem;padding:14px 26px;cursor:pointer;transition:opacity .15s}
+.copy-btn:hover{opacity:.88}
+.copy-status{font-size:.88rem;color:var(--taupe);min-height:1.2em}
+.copy-fallback{min-height:160px}
+.small-note{font-size:.8rem;color:var(--muted);line-height:1.45;max-width:42em}
+.count{font-family:var(--script);font-style:italic;font-size:1.8rem;line-height:1}
+
+/* мастерская */
+.final{padding-block:88px 24px;display:flex;flex-direction:column;gap:24px}
+.final h2{font-size:clamp(3rem,10vw,4.6rem)}
+.weeks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.weeks div{border:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.weeks strong{font-family:var(--script);font-style:italic;font-weight:400;font-size:1.7rem;line-height:1}
+.weeks span{font-size:.92rem;line-height:1.4}
+.weeks small{font-size:.85rem;color:var(--muted)}
+@media (max-width:600px){.weeks{grid-template-columns:1fr}}
+.btn{display:block;width:100%;max-width:440px;background:var(--taupe);color:var(--on-taupe);text-decoration:none;text-align:center;font-family:var(--script);font-style:italic;font-weight:400;font-size:1.5rem;padding:18px 20px;transition:opacity .15s}
+.btn:hover{opacity:.88}
+.btn-note{font-size:.88rem;color:var(--muted);max-width:30em}
+footer{padding-top:40px;font-size:.85rem;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="cover">
+  <img class="cover-img" src="img/desk.jpg" alt="">
+  <div class="cover-inner">
+    <p class="cover-top">бонус к практикуму «блог нового времени»</p>
+    <div class="cover-title">
+      <h1 class="script">банк заголовков</h1>
+      <p>мои авторские заголовки и логика, по которой они работают</p>
+    </div>
+    <nav class="cover-nav" aria-label="Разделы">
+      <a href="#types">типы заголовков</a>
+      <a href="#save">мои заголовки</a>
+      <a href="#masterskaya">мастерская</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero" id="start">
+    <p class="lead-sm">Заголовок — это 30–50% того, залетит рилс или нет. Но шаблонные хуки перестают работать. Для людей это уже белый шум: все говорят одни и те же фразы</p>
+    <p class="indent-s">И ещё часто бывает так: хук звучит очень многообещающе, будто видео будет невероятно ценным и полезным. А смысл, который озвучен в самом рилс, оказывается пустым. Поэтому я против шаблонных хуков</p>
+    <p class="quote indent">заголовок — это не шаблонный хук. он может быть авторским, осознанным, <span class="br">своим</span></p>
+    <p class="indent-s">Все заголовки здесь мои. Я придумывала их сама, а не брала готовые. Я разложила их по типам и на своих примерах разбираю, как устроен каждый и на чём держится его логика. А под свою нишу вы адаптируете их сами</p>
+    <p class="lead-sm">как пользоваться</p>
+    <ol class="steps">
+      <li><span>Прочитайте логику каждого типа</span></li>
+      <li><span>Посмотрите, как она работает на моих заголовках из разных тем</span></li>
+      <li><span>Напишите 2–3 своих варианта. В конце их можно скопировать одним текстом</span></li>
+    </ol>
+  </header>
+
+  <section id="types">
+    <div class="stack">
+      <div class="head">
+        <p class="lead-sm">4 типа · 16 моих заголовков</p>
+        <h2 class="script">типы заголовков</h2>
+      </div>
+      <p class="indent-s">Под каждым типом: логика, формулы, мои заголовки и разбор одного из них</p>
+      <nav class="toc" aria-label="Типы заголовков">
+        <a href="#t1"><span>1</span>совет</a>
+        <a href="#t2"><span>2</span>цель</a>
+        <a href="#t3"><span>3</span>ролевая модель</a>
+        <a href="#t4"><span>4</span>противоречие</a>
+      </nav>
+    </div>
+
+    <div class="types">
+
+      <article class="f" id="t1">
+        <div class="f-head"><span class="f-n">1</span><h3 class="script">совет</h3></div>
+        <p class="f-why">Вы делитесь конкретным советом или рекомендацией, как подруге. Человек сразу понимает, что получит из этого видео, и остаётся, чтобы досмотреть</p>
+        <div class="fbox"><p class="lbl">формулы</p><ul>
+          <li>Всего один совет, который я бы дала себе в …</li>
+          <li>Если бы мне нужно было …, вот 3 шага, с которых я бы начала</li>
+          <li>Чтобы …, вам нужно развить всего один навык</li>
+        </ul></div>
+        <p class="lbl">мои заголовки</p>
+        <ul class="mine">
+          <li class="hl">Всего один совет, который я бы дала себе в 25 лет<span class="tag">жизнь</span></li>
+          <li class="hl">Чтобы ваш блог быстро вырос, вам нужно развить всего один навык<span class="tag">блог</span></li>
+          <li class="hl">5 книг, которые должна прочитать каждая девушка от 20 до 30 лет<span class="tag">саморазвитие</span></li>
+          <li class="hl">Если бы я хотела стать неприлично богатой женщиной к 35 годам, вот 3 шага, с которых я бы начала<span class="tag">деньги</span></li>
+        </ul>
+        <div class="razbor"><p class="lbl">разбор</p><p class="q">«Всего один совет, который я бы дала себе в 25 лет»</p><p>«Всего один» обещает простой ответ на большой вопрос. А «себе в 25» делает совет личным: я не поучаю, а делюсь тем, что поняла сама</p></div>
+        <div class="my"><label for="my-t1">Мой вариант <span>— каждый с новой строки</span></label><textarea id="my-t1" data-save data-name="совет"></textarea></div>
+      </article>
+
+      <article class="f" id="t2">
+        <div class="f-head"><span class="f-n">2</span><h3 class="script">цель</h3></div>
+        <p class="f-why">Вы не говорите, что уже всего добились. Вы показываете путь прямо сейчас: «посмотрите, как я иду к цели». За этим хочется наблюдать</p>
+        <div class="fbox"><p class="lbl">формулы</p><ul>
+          <li>Мне … лет, и я иду к …</li>
+          <li>Что я начала делать как девушка, которая идёт к …</li>
+          <li>Спустя … я наконец …</li>
+        </ul></div>
+        <p class="lbl">мои заголовки</p>
+        <ul class="mine">
+          <li class="hl">Мне 25 лет, и я иду к цели 1 млн $ капитала<span class="tag">деньги</span></li>
+          <li class="hl">Спустя 3 года я прилетела исполнять свою большую мечту<span class="tag">внешность</span></li>
+          <li class="hl">Через месяц я отправляюсь в путешествие мечты, в Кейптаун, и проживу там целых три месяца<span class="tag">путешествия</span></li>
+          <li class="hl">Что я начала делать как девушка, которая идёт к цели в 1 млн $<span class="tag">деньги</span></li>
+        </ul>
+        <div class="razbor"><p class="lbl">разбор</p><p class="q">«Мне 25 лет, и я иду к цели 1 млн $ капитала»</p><p>Возраст и большая цель в одной фразе. Цель ещё не достигнута, и это главное: человек остаётся, чтобы понять, как я к ней иду и что помогает</p></div>
+        <div class="my"><label for="my-t2">Мой вариант <span>— каждый с новой строки</span></label><textarea id="my-t2" data-save data-name="цель"></textarea></div>
+      </article>
+
+      <article class="f" id="t3">
+        <div class="f-head"><span class="f-n">3</span><h3 class="script">ролевая модель</h3></div>
+        <p class="f-why">Вы говорите из позиции своего результата. Не «как я исправила свои проблемы», а «вот что у меня получилось и что для этого понадобилось»</p>
+        <div class="fbox"><p class="lbl">формулы</p><ul>
+          <li>Мне … лет, и я …</li>
+          <li>Я … за …, и вот главные советы, которые должна услышать каждая, кто …</li>
+          <li>Оказывается, …</li>
+        </ul></div>
+        <p class="lbl">мои заголовки</p>
+        <ul class="mine">
+          <li class="hl">Я набрала 75 тысяч подписчиков за 5 месяцев, и вот главные советы, которые должна услышать каждая, кто хочет вырастить свой блог<span class="tag">блог</span></li>
+          <li class="hl">Один рилс принёс мне 13 000 аудитории за два дня, хотя раньше мои просмотры выглядели так<span class="tag">блог</span></li>
+          <li class="hl">Оказывается, меньше чем за год можно кардинально изменить свою жизнь. Практически всё, что я загадала, сбылось<span class="tag">жизнь</span></li>
+          <li class="hl">Год назад на моих счетах было 0. А сегодня моих накоплений хватит на годы вперёд<span class="tag">деньги</span></li>
+        </ul>
+        <div class="razbor"><p class="lbl">разбор</p><p class="q">«Я набрала 75 тысяч подписчиков за 5 месяцев, и вот главные советы…»</p><p>Результат и срок сразу показывают, что у меня есть опыт. А вторая часть обещает, что этим опытом я поделюсь, и человеку есть зачем остаться</p></div>
+        <div class="my"><label for="my-t3">Мой вариант <span>— каждый с новой строки</span></label><textarea id="my-t3" data-save data-name="ролевая модель"></textarea></div>
+      </article>
+
+      <article class="f" id="t4">
+        <div class="f-head"><span class="f-n">4</span><h3 class="script">противоречие</h3></div>
+        <p class="f-why">Берём общественное мнение и спокойно встаём на другую сторону. Человек либо узнаёт себя, либо хочет поспорить, и в обоих случаях досматривает</p>
+        <div class="fbox"><p class="lbl">формулы</p><ul>
+          <li>Пока все …, я …</li>
+          <li>Я больше не …, потому что …</li>
+          <li>У меня есть возможность …, но я осознанно этого не делаю</li>
+          <li>Настоящее … — это не …</li>
+        </ul></div>
+        <p class="lbl">мои заголовки</p>
+        <ul class="mine">
+          <li class="hl">Я больше не ищу богатого мужа, потому что, оказывается, стать богатой самой тоже очень легко<span class="tag">отношения</span></li>
+          <li class="hl">Я уже два года без отношений<span class="tag">отношения</span></li>
+          <li class="hl">У меня есть возможность купить квартиру, но я осознанно этого не делаю<span class="tag">деньги</span></li>
+          <li class="hl">Настоящее богатство — это не сумочка Birkin<span class="tag">статус</span></li>
+        </ul>
+        <div class="razbor"><p class="lbl">разбор</p><p class="q">«Я уже два года без отношений»</p><p>Всего пять слов, но они идут против того, что принято считать нормой. Человеку сразу хочется понять, почему так, и он остаётся</p></div>
+        <div class="my"><label for="my-t4">Мой вариант <span>— каждый с новой строки</span></label><textarea id="my-t4" data-save data-name="противоречие"></textarea></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="save">
+    <div class="task">
+      <div class="t-title">мои заголовки</div>
+      <p><span class="count" id="hooks-count">0</span> <span class="muted" id="hooks-word">заголовков записано</span></p>
+      <button class="copy-btn" id="copy-answers" type="button">скопировать всё одним текстом</button>
+      <p class="copy-status" id="copy-status" aria-live="polite"></p>
+      <textarea id="copy-fallback" class="copy-fallback" readonly hidden aria-label="Ваши заголовки"></textarea>
+      <p class="small-note">Ваши варианты сохраняются только в этом браузере. Если откроете материал на другом телефоне или очистите браузер, поля будут пустыми. Нажмите кнопку, и всё скопируется одним текстом. Вставьте его в заметки или в «Избранное» в Telegram, чтобы заголовки всегда были под рукой</p>
+    </div>
+  </section>
+
+  <div class="final" id="masterskaya">
+    <p class="lead-sm">если вам близок мой подход, приглашаю вас в мастерскую</p>
+    <h2 class="script">мастерская</h2>
+    <p class="indent">Этот файл — шпаргалка. В мастерской мы три недели каждый день пишем сценарии, снимаем и выкладываем рилс. Вместе находим ваши темы, форматы и заголовки</p>
+    <p class="quote indent-s">21 день — это время, которого достаточно, чтобы нащупать темы личного бренда и начать набирать на них аудиторию</p>
+    <div class="weeks">
+      <div><strong>неделя 1</strong><span>лекция «структура залетающих reels»</span><small>+ разбор ваших блогов</small></div>
+      <div><strong>неделя 2</strong><span>воркшоп по сценариям и лид-магнитам</span><small>+ разбор</small></div>
+      <div><strong>неделя 3</strong><span>лекция «стратегия монетизации личного бренда»</span><small>+ разбор</small></div>
+    </div>
+    <ul class="stars">
+      <li><b>6 живых эфиров:</b> 3 лекции и 3 разбора, на которых мы работаем с вашими блогами</li>
+      <li><b>ежедневная практика</b> 5 дней в неделю с обратной связью в чате</li>
+      <li><b>сценарии пишем вместе.</b> Не даю шаблон, а собираю с вами ваш сценарий: под вашу тему и подачу</li>
+      <li><b>бадди и брейнштормы.</b> У каждой есть партнёр по практике, чтобы делать, а не откладывать. И моя методология брейнштормов, чтобы находить темы самостоятельно</li>
+      <li><b>записи всех эфиров</b> остаются у вас навсегда</li>
+    </ul>
+    <a class="btn" href="https://lowkey-marketing.getcourse.ru/Masterskaya3" target="_blank" rel="noopener">хочу в мастерскую</a>
+    <p class="btn-note">Остались вопросы? Напишите моей команде <a href="https://t.me/savkovaelizaveta" target="_blank" rel="noopener">@savkovaelizaveta</a></p>
+    <footer>Елизавета Савкова · @elizavetasavkova</footer>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function set(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+
+  var areas=document.querySelectorAll("textarea[data-save]");
+  var cnt=document.getElementById("hooks-count"),word=document.getElementById("hooks-word");
+  function plural(n){var a=n%10,b=n%100;if(a===1&&b!==11)return"заголовок записан";if(a>=2&&a<=4&&(b<12||b>14))return"заголовка записано";return"заголовков записано"}
+  function lines(el){return el.value.split("\n").map(function(s){return s.trim()}).filter(Boolean)}
+  function recount(){
+    var n=0;areas.forEach(function(el){n+=lines(el).length});
+    cnt.textContent=n;word.textContent=plural(n);
+  }
+  areas.forEach(function(el){
+    var k="hooks-"+el.id,v=get(k);if(v)el.value=v;
+    el.addEventListener("input",function(){set(k,el.value);recount()});
+  });
+  recount();
+
+  var btn=document.getElementById("copy-answers"),st=document.getElementById("copy-status"),fb=document.getElementById("copy-fallback");
+  function collect(){
+    var parts=["Мои заголовки · Банк заголовков",""];
+    areas.forEach(function(el){
+      var l=lines(el);if(!l.length)return;
+      parts.push(el.dataset.name+":");
+      l.forEach(function(s){parts.push("— "+s)});
+      parts.push("");
+    });
+    if(parts.length===2)parts.push("Пока пусто: впишите свои варианты под типами заголовков");
+    return parts.join("\n");
+  }
+  btn.addEventListener("click",function(){
+    var text=collect();
+    function fallback(){fb.hidden=false;fb.value=text;fb.focus();fb.select();st.textContent="Выделила текст ниже: скопируйте его вручную"}
+    try{
+      navigator.clipboard.writeText(text).then(function(){fb.hidden=true;st.textContent="Скопировано! Теперь вставьте в заметки"},fallback);
+    }catch(e){fallback()}
+  });
+})();
+</script>
+
+</body>
+</html>
